@@ -26,11 +26,13 @@ log = "0.4"
 lyon_path = "0.14"
 
 [dependencies.freetype]
-version = "^0.4.1"
+git  = "https://github.com/cmr/rust-freetype"
+branch = "web"
 optional = true
 
 [dependencies.servo-fontconfig]
-version = "0.4"
+git  = "https://github.com/cmr/rust-fontconfig"
+branch = "web"
 optional = true
 
 [dev-dependencies]
@@ -52,10 +54,10 @@ core-graphics = "^0.17.1"
 core-text = "13.2"
 
 [target.'cfg(not(any(target_family = "windows", target_os = "macos", target_os = "ios")))'.dependencies]
-freetype = "^0.4.1"
+freetype = { git = "https://github.com/cmr/rust-freetype", branch="web"}
 
 [target.'cfg(not(any(target_family = "windows", target_os = "macos", target_os = "ios", target_arch = "wasm32")))'.dependencies]
-servo-fontconfig = "0.4"
+servo-fontconfig = { git = "https://github.com/cmr/rust-fontconfig", branch="web"}
 
 [target.'cfg(not(any(target_arch = "wasm32", target_family = "windows", target_os = "android")))'.dependencies]
 dirs = "2.0"
